@@ -6,7 +6,7 @@ class Eratosthenes
   def initialize(max)
     @max = max
     @root = Math.sqrt(@max).floor
-    count_primes
+    sieve
   end
 
   def count
@@ -22,7 +22,7 @@ class Eratosthenes
 
   private
 
-  def count_primes
+  def sieve
     numbers = (FIRST_PRIME..max).to_a
     FIRST_PRIME.upto(root) do |number|
       next unless numbers.include?(number)
